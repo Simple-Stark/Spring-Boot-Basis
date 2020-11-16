@@ -15,7 +15,12 @@ public enum ResultCodeEnum {
     /**
      * 未知错误
      */
-    UNKNOWN_ERROR(false,100,"未知错误"),
+    UNKNOWN_ERROR(false,201,"未知错误"),
+
+    /**
+     * 空指针异常错误
+     */
+    NULL_POINT(false,202,"空指针异常，请联系管理员！"),
 
     /**
      * 参数错误

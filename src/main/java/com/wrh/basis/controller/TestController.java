@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * 控制层测试
@@ -33,6 +32,14 @@ public class TestController {
 
     @GetMapping("/testSetResult")
     public Result testSetResult() {
-        return Result.setResult(ResultCodeEnum.PARAM_ERROR).data(new HashMap<String, Object>(0));
+        return Result.setResult(ResultCodeEnum.PARAM_ERROR);
+    }
+
+    @GetMapping("/testException")
+    public Result testException() {
+        // int i = 10 /0 ;
+        // throw new TestException(202,"testException");
+        throw new NullPointerException();
+        // return Result.setResult(ResultCodeEnum.NULL_POINT);
     }
 }

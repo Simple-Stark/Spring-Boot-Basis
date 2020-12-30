@@ -10,7 +10,6 @@ import java.util.Map;
  * @date 2020-11-11
  */
 public class Result {
-    private Boolean success;
 
     private Integer code;
 
@@ -29,7 +28,6 @@ public class Result {
      */
     public static Result success() {
         Result result = new Result();
-        result.setSuccess(ResultCodeEnum.SUCCESS.getSuccess());
         result.setCode(ResultCodeEnum.SUCCESS.getCode());
         result.setMessage(ResultCodeEnum.SUCCESS.getMessage());
         return result;
@@ -41,7 +39,6 @@ public class Result {
      */
     public static Result error() {
         Result result = new Result();
-        result.setSuccess(ResultCodeEnum.UNKNOWN_ERROR.getSuccess());
         result.setCode(ResultCodeEnum.UNKNOWN_ERROR.getCode());
         result.setMessage(ResultCodeEnum.UNKNOWN_ERROR.getMessage());
         return result;
@@ -54,7 +51,6 @@ public class Result {
      */
     public static Result setResult(ResultCodeEnum resultCodeEnum) {
         Result result = new Result();
-        result.setSuccess(resultCodeEnum.getSuccess());
         result.setCode(resultCodeEnum.getCode());
         result.setMessage(resultCodeEnum.getMessage());
         return result;
@@ -101,24 +97,6 @@ public class Result {
     public Result code(Integer code) {
         this.setCode(code);
         return this;
-    }
-
-    /**
-     * 自定义返回结果
-     * @param success 自定义的返回状态
-     * @return com.wrh.basis.common.Result 的实例
-     */
-    public Result success(Boolean success) {
-        this.setSuccess(success);
-        return this;
-    }
-
-    public Boolean getSuccess() {
-        return success;
-    }
-
-    public void setSuccess(Boolean success) {
-        this.success = success;
     }
 
     public Integer getCode() {

@@ -10,27 +10,22 @@ public enum ResultCodeEnum {
     /**
      * 成功
      */
-    SUCCESS(true,200,"成功"),
+    SUCCESS(200,"成功"),
 
     /**
      * 未知错误
      */
-    UNKNOWN_ERROR(false,201,"未知错误"),
+    UNKNOWN_ERROR(201,"未知错误"),
 
     /**
      * 空指针异常错误
      */
-    NULL_POINT(false,202,"空指针异常，请联系管理员！"),
+    NULL_POINT(202,"空指针异常，请联系管理员！"),
 
     /**
      * 参数错误
      */
-    PARAM_ERROR(false,400,"参数错误");
-
-    /**
-     * 响应是否成功
-     */
-    private Boolean success;
+    PARAM_ERROR(400,"参数错误");
 
     /**
      * 响应状态码
@@ -42,14 +37,9 @@ public enum ResultCodeEnum {
      */
     private String message;
 
-    ResultCodeEnum(boolean success, Integer code, String message) {
-        this.success = success;
+    ResultCodeEnum(Integer code, String message) {
         this.code = code;
         this.message = message;
-    }
-
-    public Boolean getSuccess() {
-        return success;
     }
 
     public Integer getCode() {

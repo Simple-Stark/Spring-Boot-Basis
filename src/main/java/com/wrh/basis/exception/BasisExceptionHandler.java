@@ -29,7 +29,7 @@ public class BasisExceptionHandler {
     public Result error(Exception e) {
         // 打印日志
         log.error("BasisExceptionHandler =====>> {}",e.getMessage(),e);
-        return Result.error();
+        return Result.error().message(e.getMessage());
     }
 
     /**
